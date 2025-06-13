@@ -51,7 +51,6 @@ const slots = useSlots()
 
 const hasButtonGroup = computed(() => !!slots['button-group'])
 
-// Container styles with twMerge support
 const containerClass = computed(() =>
   twMerge(
     `flex flex-col rounded-md border border-zinc-300 dark:border-white/[0.149] outline-zinc -300 has-[:focus]:outline-offset-2 has-[:focus]:outline-1 has-[:focus]:outline-zinc-300`,
@@ -59,10 +58,8 @@ const containerClass = computed(() =>
   ),
 )
 
-// TextArea specific styles
 const textAreaClass = computed(() => twMerge('rounded-t-md border-0 rounded-b-none'))
 
-// Button group container styles
 const buttonGroupContainerClass = computed(() =>
   twMerge('flex justify-end gap-2 bg-white dark:bg-zinc-800 rounded-b-md px-1.5 pb-1.5'),
 )

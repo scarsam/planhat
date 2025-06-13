@@ -42,14 +42,12 @@ onMounted(() => {
     const tabindex = Number(tabindexAttr)
     if (isNaN(tabindex)) return
 
-    // Cmd+Enter or Ctrl+Enter submits form
     if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
       e.preventDefault()
       sendMessage()
       return
     }
 
-    // Left and Right arrow navigation between tabindex elements
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault()
       const elems = getTabbableElements()
@@ -59,10 +57,8 @@ onMounted(() => {
       if (currentIndex === -1) return
 
       if (e.key === 'ArrowRight') {
-        // Move forward, loop after last
         currentIndex = (currentIndex + 1) % elems.length
       } else if (e.key === 'ArrowLeft') {
-        // Move backward, loop before first
         currentIndex = (currentIndex - 1 + elems.length) % elems.length
       }
       elems[currentIndex].focus()

@@ -64,7 +64,6 @@ export interface Props {
 
 const props = defineProps<Props>()
 
-// Initials fallback
 const initials = computed(() =>
   props.author
     ?.split(' ')
@@ -73,7 +72,6 @@ const initials = computed(() =>
     .toUpperCase(),
 )
 
-// Date formatting
 const formattedDate = computed(() => {
   if (!props.date) return ''
   const d = typeof props.date === 'string' ? new Date(props.date) : props.date

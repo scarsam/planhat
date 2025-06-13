@@ -35,7 +35,6 @@ const emit = defineEmits<{
 
 const textareaRef = ref<HTMLTextAreaElement>()
 
-// // Base styles for the textarea
 const defaultStyles = `
   p-1.5 w-full bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-white/[0.149] rounded-md
   resize-none outline-none text-body-sm
@@ -44,7 +43,6 @@ const defaultStyles = `
 const attrs = useAttrs()
 const { class: incomingClass, ...otherAttrs } = attrs
 
-// Use computed to make it reactive
 const mergedClass = computed(() =>
   twMerge(
     defaultStyles,

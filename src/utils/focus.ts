@@ -1,6 +1,6 @@
 export function getTabbableElements() {
   const all = Array.from(document.querySelectorAll<HTMLElement>('[tabindex]'))
-  // Filter only positive tabindex, sort ascending
+
   return all
     .filter((el) => {
       const t = Number(el.getAttribute('tabindex'))
